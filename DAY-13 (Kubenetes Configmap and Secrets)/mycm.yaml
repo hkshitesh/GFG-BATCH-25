@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  password: root@123
+  uname: Root
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-09-08T11:16:41Z"
+  name: cm1
+  namespace: default
+  resourceVersion: "749445"
+  uid: e3ff1183-464d-45c8-a243-6c99675041a7
