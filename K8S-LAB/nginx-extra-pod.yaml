@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-extra-pod
+  namespace: myns
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    resources:
+      requests:
+        memory: "2Gi" # Requests a large amount of memory.
+        cpu: "1"      # Requests a large amount of CPU.
+      limits:
+        memory: "3Gi"
+        cpu: "1"

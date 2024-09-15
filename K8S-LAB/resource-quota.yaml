@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: myns-quota    # The name of the Resource Quota.
+  namespace: myns # The namespace to which the Resource Quota will apply.
+spec:
+  hard:                  # The hard limits imposed by this Resource Quota.
+    requests.cpu: "2"    # The total CPU resource requests allowed in the namespace (2 cores).
+    requests.memory: "4Gi" # The total memory resource requests allowed in the namespace (4 GiB).
+    limits.cpu: "4"      # The total CPU resource limits allowed in the namespace (4 cores).
+    limits.memory: "8Gi" # The total memory resource limits allowed in the namespace (8 GiB).
+    pods: "10"           # The total number of Pods allowed in the namespace.
+    persistentvolumeclaims: "5" # The total number of PersistentVolumeClaims allowed in the namespace.
+    configmaps: "10"     # The total number of ConfigMaps allowed in the namespace.
+    services: "5"        # The total number of Services allowed in the namespace.
