@@ -1,0 +1,13 @@
+---
+- hosts: gfg
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: Install httpd on RedHat Family
+      command: yum install httpd -y
+      when: ansible_os_family=="RedHat"
+    - name: Install httpd on Debian Linux Family
+      command: apt-get install apache2 -y
+      when: ansible_os_family=="Debian"
