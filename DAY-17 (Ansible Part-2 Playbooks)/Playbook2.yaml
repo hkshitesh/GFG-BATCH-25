@@ -1,0 +1,10 @@
+---
+- hosts: gfg
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Installation HTTPD
+      action: yum name=httpd state=present
+    - name: Start HTTPD Service
+      action: service name=httpd state=started
