@@ -1,0 +1,13 @@
+---
+- hosts: gfg
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    currstate: absent
+  tasks:
+
+    - name: Installation HTTPD
+      action: yum name=httpd state='{{currstate}}'
+    - name: Install Git
+      action: yum name=git state='{{currstate}}'
